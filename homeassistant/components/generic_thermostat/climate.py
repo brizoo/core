@@ -43,7 +43,8 @@ from homeassistant.helpers.event import (
 from homeassistant.helpers.reload import async_setup_reload_service
 from homeassistant.helpers.restore_state import RestoreEntity
 
-from . import DOMAIN, PLATFORMS                       
+from . import DOMAIN, PLATFORMS
+
 _LOGGER = logging.getLogger(__name__)
 
 DEFAULT_TOLERANCE = 0.3
