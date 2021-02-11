@@ -142,24 +142,24 @@ class GenericThermostat(ClimateEntity, RestoreEntity):
     """Representation of a Generic Thermostat device."""
 
     def __init__(
-            self,
-            name,
-            heater_entity_id,
-            cooler_entity_id,
-            sensor_entity_id,
-            reverse_cycle,
-            min_temp,
-            max_temp,
-            target_temp,
-            min_cycle_duration,
-            cold_tolerance,
-            hot_tolerance,
-            keep_alive,
-            initial_hvac_mode,
-            away_temp_heater,
-            away_temp_cooler,
-            precision,
-            unit,
+        self,
+        name,
+        heater_entity_id,
+        cooler_entity_id,
+        sensor_entity_id,
+        reverse_cycle,
+        min_temp,
+        max_temp,
+        target_temp,
+        min_cycle_duration,
+        cold_tolerance,
+        hot_tolerance,
+        keep_alive,
+        initial_hvac_mode,
+        away_temp_heater,
+        away_temp_cooler,
+        precision,
+        unit,
     ):
         """Initialize the thermostat."""
         self._name = name
@@ -227,8 +227,8 @@ class GenericThermostat(ClimateEntity, RestoreEntity):
             """Init on startup."""
             sensor_state = self.hass.states.get(self.sensor_entity_id)
             if sensor_state and sensor_state.state not in (
-                    STATE_UNAVAILABLE,
-                    STATE_UNKNOWN,
+                STATE_UNAVAILABLE,
+                STATE_UNKNOWN,
             ):
                 self._async_update_temp(sensor_state)
                 self.async_write_ha_state()
