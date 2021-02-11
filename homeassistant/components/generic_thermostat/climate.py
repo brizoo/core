@@ -212,7 +212,7 @@ class GenericThermostat(ClimateEntity, RestoreEntity):
         )
         self.async_on_remove(
             async_track_state_change(
-                self.hass, self.cooler_entity_id, self._async_switch_changed
+                self.hass, [self.cooler_entity_id], self._async_switch_changed
             )
         )
 
