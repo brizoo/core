@@ -456,7 +456,7 @@ class GenericThermostat(ClimateEntity, RestoreEntity):
                         current_state = HVAC_MODE_OFF
                     long_enough = condition.state(
                         self.hass,
-                        entity,
+                        self.heater_entity_id,
                         current_state,
                         self.min_cycle_duration,
                     )
